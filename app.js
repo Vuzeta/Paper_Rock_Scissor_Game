@@ -1,13 +1,14 @@
-const choice = [...document.querySelectorAll('.container-options > div')];
-const play = document.querySelector('.play');
-
-const outputWinner = document.querySelector('.winner');
-const outputNumberOfGame = document.querySelector('.number-of-game');
-const outputWins = document.querySelector('.number-of-wins');
-const outputLoses = document.querySelector('.number-of-lose');
-const outputDraws = document.querySelector('.number-of-draw');
-const outputPlayerChoose = document.querySelector('.player-choice');
-const outputComputerChoose = document.querySelector('.computer-choice');
+const GameElements = {
+    choice: [...document.querySelectorAll('.container-options > div')],
+    play: document.querySelector('.play'),
+    outputWinner: document.querySelector('.winner'),
+    outputNumberOfGame: document.querySelector('.number-of-game'),
+    outputWins: document.querySelector('.number-of-wins'),
+    outputLoses: document.querySelector('.number-of-lose'),
+    outputDraws: document.querySelector('.number-of-draw'),
+    outputPlayerChoose: document.querySelector('.player-choice'),
+    outputComputerChoose: document.querySelector('.computer-choice')
+}
 
 // Variables
 let playerChoice = '';
@@ -20,13 +21,13 @@ let counterDraws = 0;
 
 //Results printing function
 const showResult = () => {
-    outputPlayerChoose.textContent = playerChoice;
-    outputComputerChoose.textContent = computerChoice;
-    outputWinner.textContent = WhoWin;
-    outputNumberOfGame.textContent = ++numberOfGame;
-    outputWins.textContent = counterWins;
-    outputLoses.textContent = counterLoses;
-    outputDraws.textContent = counterDraws;
+    GameElements.outputPlayerChoose.textContent = playerChoice;
+    GameElements.outputComputerChoose.textContent = computerChoice;
+    GameElements.outputWinner.textContent = WhoWin;
+    GameElements.outputNumberOfGame.textContent = ++numberOfGame;
+    GameElements.outputWins.textContent = counterWins;
+    GameElements.outputLoses.textContent = counterLoses;
+    GameElements.outputDraws.textContent = counterDraws;
 }
 
 //Drawing a computer
@@ -63,15 +64,15 @@ const WhoIsWinner = (player, computer) => {
 };
 
 //Selection of a game element
-for (let i = 0; i < choice.length; i++) {
-    choice[i].addEventListener("click", function (e) {
+for (let i = 0; i < GameElements.choice.length; i++) {
+    GameElements.choice[i].addEventListener("click", function (e) {
         let target = e.target;
-        let divAttr = choice[i].getAttribute('class');
+        let divAttr = GameElements.choice[i].getAttribute('class');
         if (divAttr.includes('active')) {
-            choice[i].classList.remove('active');
+            GameElements.choice[i].classList.remove('active');
             playerChoice = '';
         } else {
-            choice.forEach(div => div.classList.remove('active'));
+            GameElements.choice.forEach(div => div.classList.remove('active'));
             target.classList.add('active');
             playerChoice = target.getAttribute('data-item');
         };
@@ -79,15 +80,15 @@ for (let i = 0; i < choice.length; i++) {
 };
 
 //Start of the game
-play.addEventListener('click', function () {
+GameElements.play.addEventListener('click', function () {
     if (playerChoice == '') {
         alert("Please select an item")
     } else {
         WhoIsWinner(playerChoice, ComputerRoll());
         showResult();
         playerChoice = '';
-        for (let i = 0; i < choice.length; i++) {
-            choice[i].classList.remove('active');
+        for (let i = 0; i < GameElements.choice.length; i++) {
+            GameElements.choice[i].classList.remove('active');
         };
     };
 });

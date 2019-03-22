@@ -16,10 +16,6 @@ body {
     font-family: font;
 }
 
-.title {
-    font-style: italic;
-}
-
 .container-options {
     display: flex;
     justify-content: center;
@@ -55,24 +51,6 @@ body {
     transition-duration: 1s;
 }
 
-.play {
-    display: block;
-    padding: 20px 80px;
-    background: none;
-    font-family: font;
-    font-size: 50px;
-    border: 5px solid black;
-    margin: 0 150px;
-    transition-duration: .5s;
-    cursor: pointer;
-}
-
-.play:hover {
-    border: 5px solid orange;
-    color: orange;
-    transition-duration: .5s;
-}
-
 .container-results {
     margin: 30px auto;
     display: flex;
@@ -81,34 +59,12 @@ body {
     font-family: 'Sarabun', sans-serif;
 }
 
+.title {
+    font-style: italic;
+}
+
 .result {
     font-size: 20px;
-}
-
-.result-players {
-    font-size: 20px;
-}
-
-.result,
-.result-players {
-    cursor: context-menu;
-    align-self: flex-start;
-}
-
-.winner {
-    text-align: center;
-    color: orange;
-    font-size: 50px;
-}
-
-.player-choice {
-    color: blue;
-    font-weight: bold;
-}
-
-.computer-choice {
-    color: red;
-    font-weight: bold;
 }
 
 .result>p:nth-child(5) {
@@ -131,14 +87,42 @@ span {
     color: black;
 }
 
-.container-winner {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, .8);
+.play {
+    display: block;
+    padding: 20px 80px;
+    background: none;
+    font-family: font;
+    font-size: 50px;
+    border: 5px solid black;
+    margin: 0 150px;
+    transition-duration: .5s;
+    cursor: pointer;
+}
+
+.play:hover {
+    border: 5px solid orange;
+    color: orange;
+    transition-duration: .5s;
+}
+
+.result-players {
+    font-size: 20px;
+}
+
+.result,
+.result-players {
+    cursor: context-menu;
+    align-self: flex-start;
+}
+
+.player-choice {
+    color: blue;
+    font-weight: bold;
+}
+
+.computer-choice {
+    color: red;
+    font-weight: bold;
 }
 
 .winner-title {
@@ -146,5 +130,11 @@ span {
     top: 50%;
     left: 0%;
     text-align: center;
+    font-size: 50px;
+}
+
+.winner {
+    text-align: center;
+    color: orange;
     font-size: 50px;
 }
