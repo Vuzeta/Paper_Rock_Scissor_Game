@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 class="game-title">Rock Paper Scissors</h1>
+    <div class="container-options">
+        <div class="rock" data-item="rock"></div>
+        <div class="paper" data-item="paper"></div>
+        <div class="scissor" data-item="scissor"></div>
+    </div>
+    <div class="container-results">
+        <div class="result">
+            <h1 class="result-title title">Actual results:</h2>
+                <p>Number of games: <span class="number-of-game">0</span></p>
+                <p>Wins: <span class="number-of-wins">0</span></p>
+                <p>Loses: <span class="number-of-lose">0</span></p>
+                <p>Draws: <span class="number-of-draw">0</span></p>
+        </div>
+        <div class="result-button">
+            <button class="play">Let's Play</button>
+        </div>
+        <div class="result-players">
+            <h1 class="title-player title">Choice of players:</h2>
+                <p>Your choice: <span class="player-choice"></span></p>
+                <p>Computer choice: <span class="computer-choice"></span></p>
+                <h1 class="title-winner title">Winner of the game:</h1>
+                <h1><span class="winner"></span></h1>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
